@@ -1,0 +1,92 @@
+@mixin type-scale($font-size, $line-height, $scale) {
+  $line: round($font-size * $line-height);
+  $size: round($font-size * $scale);
+  $auto-line-count: ceil($size / $line);
+  $auto-line: $auto-line-count * $line;
+
+  font-size: to-rem($size, $font-size) !important;
+  line-height: to-rem($auto-line, $font-size) !important;
+}
+
+@mixin typography-size($target: '') {
+  $defaultTarget: if($target == '', 'mobile', $target);
+  $base: map-get($type-breakpoints, $defaultTarget);
+
+  @each $size in $sizes {
+    $i: index($sizes, $size);
+
+    .is-size-#{$i}#{if($target == '', '', '-' + $target)} {
+      @include type-scale(map-get($base, 'size'), map-get($base, 'line-height'), strip-unit($size));
+    }
+  }
+}
+
+// this should be used as the default padding
+@mixin padding-default {
+  padding: $spacing-md;
+}
+
+// this mixin is used to customise padding. Any null values will not be converted to css
+@mixin padding-custom($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top {
+    padding-top: $top !important;
+  }
+  @if $right {
+    padding-right: $right !important;
+  }
+  @if $bottom {
+    padding-bottom: $bottom !important;
+  }
+  @if $left {
+    padding-left: $left !important;
+  }
+}
+
+// this mixin is used to customise margins
+@mixin margin-custom($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top {
+    margin-top: $top !important;
+  }
+  @if $right {
+    margin-right: $right !important;
+  }
+  @if $bottom {
+    margin-bottom: $bottom !important;
+  }
+  @if $left {
+    margin-left: $left !important;
+  }
+}
+
+@mixin create-spacing-helpers($spacing-size, $breakpoint, $value) {
+  .p#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    padding: $value;
+  }
+  .pl#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include padding-custom(null, null, null, $value);
+  }
+  .pr#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include padding-custom(null, $value, null, null);
+  }
+  .pt#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include padding-custom($value, null, null, null);
+  }
+  .pb#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include padding-custom(null, null, $value, null);
+  }
+  .m#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    margin: $value;
+  }
+  .ml#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include margin-custom(null, null, null, $value);
+  }
+  .mr#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include margin-custom(null, $value, null, null);
+  }
+  .mt#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include margin-custom($value, null, null, null);
+  }
+  .mb#{if($breakpoint, '-' + $breakpoint, '')}-#{$spacing-size} {
+    @include margin-custom(null, null, $value, null);
+  }
+}

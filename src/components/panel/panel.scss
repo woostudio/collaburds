@@ -1,0 +1,9 @@
+$message-colors: $colors !default;
+
+@import 'node_modules/bulma-scss/components/panel';
+
+cds-panel {
+  &:not(:last-child) {
+    margin-bottom: $panel-margin;
+  }
+}

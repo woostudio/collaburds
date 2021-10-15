@@ -1,0 +1,82 @@
+$sign-in-size: 30rem;
+$sign-in-size-sm: 25rem;
+$sign-in-size-md: 35rem;
+$sign-in-size-lg: 40rem;
+$sign-in-breakpoint: $tablet;
+$sign-in-separator-color: $grey;
+$sign-in-separator-spacing: $spacing-xl 0 $spacing-lg;
+
+cds-sign-in {
+  .sign-in {
+    width: 100%;
+  }
+
+  .sign-in-actions {
+    margin-top: $spacing-xxs;
+  }
+
+  .sign-in-button {
+    margin-top: $spacing-xs;
+  }
+
+  .sign-in-inner {
+    padding: $spacing-xs;
+  }
+
+  .sign-in-header {
+    margin-bottom: $spacing-md;
+  }
+
+  .sign-in-separator {
+    padding: $sign-in-separator-spacing;
+    color: $sign-in-separator-color;
+    display: flex;
+
+    .sign-in-separator-text {
+      flex: 1;
+      text-align: center;
+      padding: 0 $spacing-xs;
+    }
+
+    .sign-in-separator-line {
+      flex: 1;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        top: calc(50% - .5px);
+        left: 0;
+        width: 100%;
+        border-top: 1px solid $sign-in-separator-color;
+      }
+    }
+  }
+
+  @include from($sign-in-breakpoint) {
+    .sign-in {
+      // sizes
+      width: $sign-in-size;
+      max-width: 100vw;
+
+      &.size-normal {
+        width: $sign-in-size;
+      }
+
+      &.size-small {
+        width: $sign-in-size-sm;
+      }
+
+      &.size-medium {
+        width: $sign-in-size-md;
+      }
+
+      &.size-large {
+        width: $sign-in-size-lg;
+      }
+    }
+
+    .sign-in-inner {
+      padding: $spacing-md;
+    }
+  }
+}

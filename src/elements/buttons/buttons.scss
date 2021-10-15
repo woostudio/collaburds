@@ -1,0 +1,49 @@
+cds-buttons {
+  cds-button {
+    &:not(:last-child):not(.is-fullwidth) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .buttons:last-child {
+    margin-bottom: initial;
+  }
+
+  &:last-child {
+    margin-bottom: -0.5rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    &.has-addons {
+      cds-button {
+        &:not(:first-child) {
+          .button {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+          }
+        }
+
+        &:not(:last-child) {
+          .button {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            margin-right: -1px;
+          }
+        }
+
+        &:last-child {
+          .button {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &.is-center{
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import 'node_modules/bulma-scss/form/shared';
+@import 'node_modules/bulma-scss/form/select';
+@import 'node_modules/bulma-scss/form/tools';
+
+cds-select {
+  display: block;
+  &:not(:last-child) { 
+    margin-bottom: $spacing-md;
+  }
+}

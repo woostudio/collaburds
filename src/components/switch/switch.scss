@@ -1,0 +1,109 @@
+$ds-switch-size-normal: 1.75rem;
+$ds-switch-size-small: 1.5rem;
+$ds-switch-size-medium: 2rem;
+$ds-switch-size-large: 2.25rem;
+$ds-switch-spacing:$spacing-xxs;
+
+@mixin ds-switch-size($size, $spacing) {
+  $width: $size * 2.1;
+
+  &+label {
+    &:after {
+      left: $ds-switch-spacing;
+      width: $size - $spacing * 2;
+      height: $size - $spacing * 2;
+    }
+
+    &:before {
+      width: $width;
+      height: $size;
+    }
+  }
+
+
+  &:checked {
+    &+label {
+      &:after {
+        left: $width - ($size - $spacing);
+      }
+    }
+  }
+}
+
+cds-switch {
+  display: block;
+  position: relative;
+
+  input.switch {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    & + label {
+      position: relative;
+      display: flex;
+      line-height: initial;
+      cursor: pointer;
+      align-items: center;
+
+      &:after {
+        display: block;
+        position: absolute;
+        transform: translate3d(0, 0, 0);
+        border-radius: 100%;
+        background: $white;
+        transition: all 0.25s ease-out;
+        content: '';
+      }
+
+      &:before {
+        display: block;
+        width: $ds-switch-size-normal * 2;
+        height: $ds-switch-size-normal;
+        border-radius: 100px;
+        background: $grey-lighter;
+        content: '';
+        margin-right: $spacing-sm;
+      }
+    }
+
+    &:checked {
+      &+label {
+        &:before {
+          background-color: $primary;
+        }
+      }
+    }
+
+    // Sizes
+    @include ds-switch-size($ds-switch-size-normal, $ds-switch-spacing);
+
+    &.is-small {
+      @include ds-switch-size($ds-switch-size-small, $ds-switch-spacing);
+    }
+
+    &.is-medium {
+      @include ds-switch-size($ds-switch-size-medium, $ds-switch-spacing);
+    }
+
+    &.is-large {
+      @include ds-switch-size($ds-switch-size-large, $ds-switch-spacing);
+    }
+
+    // outlined
+    &.is-outlined:not(:checked) {
+      &+label {
+        &:after {
+          background: $grey-lighter;
+        }
+
+        &::before {
+          background: transparent;
+          border: 2px solid $grey-lighter;
+        }
+      }
+    }
+  }
+}

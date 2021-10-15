@@ -1,0 +1,13 @@
+// this array is used to generate padding and margin helper classes
+$spacing-sizes: (
+  0: 0,
+  1: $spacing-xxs,
+  2: $spacing-xs,
+  3: $spacing-sm,
+  4: $spacing-default,
+  5: $spacing-md,
+  6: $spacing-lg,
+  7: $spacing-xl,
+  8: $spacing-xxl,
+  9: $spacing-xxxl,
+);

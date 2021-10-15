@@ -1,0 +1,16 @@
+import { Meta, Preview, Story, Description } from '@storybook/addon-docs/blocks';
+import readme from './readme.md';
+
+<Meta
+  title="Components|Accordion/Documentation"
+/>
+
+# Avatar
+
+<Preview>
+  <Story name="MDX storyExample" id="components-accordion--story-1">
+  </Story>
+</Preview>
+
+<Description markdown={readme} />
+

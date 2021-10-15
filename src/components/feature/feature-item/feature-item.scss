@@ -1,0 +1,117 @@
+$feature-item-icon-wrapper-size: 2.75rem;
+
+@mixin icon-background-color($color, $invert) {
+  cds-icon {
+    color: $color;
+    fill: $color;
+  }
+
+  &.icon-background {
+    background: $color;
+
+    cds-icon {
+      color: $invert;
+      fill: $invert;
+    }
+  }
+}
+
+cds-feature-item {
+  .feature-item {
+    display: flex;
+
+    // layout
+    &.layout-horizontal {
+      flex-direction: row;
+
+      &.heading-only {
+        align-items: center;
+
+        .feature-item-icon {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.layout-stack {
+      flex-direction: column;
+    }
+
+    &.layout-stack-center {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .feature-item-icon {
+        margin-right: 0!important;
+      }
+    }
+
+    // icon background
+    // Icon Colors
+    .feature-item-icon {
+      &.icon-background {
+        width: $feature-item-icon-wrapper-size;
+        height: $feature-item-icon-wrapper-size;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $radius;
+        border: 1px solid transparent;
+        margin-right: $spacing-md;
+        margin-bottom: $spacing-md;
+      }
+
+      &:not(.icon-background) {
+        cds-icon {
+          width: $feature-item-icon-wrapper-size * .65;
+          height: $feature-item-icon-wrapper-size * .65;
+          margin-right: $spacing-default;
+          margin-bottom: $spacing-default;
+        }
+      }
+
+      @each $name,
+      $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+
+        &.is-#{$name} {
+          @include icon-background-color($color, $color-invert);
+
+          &.is-inverted {
+            @include icon-background-color($color-invert, $color);
+          }
+
+          &.is-outlined {
+            background-color: transparent;
+            border-color: $color;
+            @include icon-background-color(transparent, $color);
+          }
+
+          &.is-inverted.is-outlined {
+            background-color: transparent;
+            border-color: $color-invert;
+            @include icon-background-color(transparent, $color-invert);
+          }
+
+          // If light and dark colors are provided
+          @if length($pair)>=4 {
+            $color-light: nth($pair, 3);
+            $color-dark: nth($pair, 4);
+
+            &.is-light {
+              @include icon-background-color($color-light, $color-dark);
+            }
+          }
+        }
+      }
+    }
+
+    .feature-item-description {
+      margin-top: $spacing-sm;
+    }
+
+  }
+}

@@ -1,0 +1,169 @@
+$banner-spacing: $spacing-sm;
+$banner-icon-size: 2.25rem;
+$banner-breakpoint: $tablet;
+$banner-max-width: $desktop;
+
+@mixin icon-bg($bg-color) {
+  .banner-icon {
+    background-color: rgba($bg-color, .90);
+
+    cds-icon {
+      color: findColorInvert($bg-color);
+      fill: findColorInvert($bg-color);
+    }
+  }
+}
+
+cds-banner {
+  display: block;
+
+  .banner {
+    position: relative;
+
+    &:not(.show) {
+      display: none;
+    }
+
+    // positions
+    &.float-top,
+    &.float-bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: $banner-spacing;
+
+      .banner-inner {
+        max-width: $banner-max-width;
+        margin: 0 auto;
+      }
+    }
+
+    &.float-top {
+      top: 0;
+    }
+
+    &.float-bottom {
+      bottom: 0;
+    }
+
+
+    &.fixed-top,
+    &.fixed-bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+
+      .banner-inner {
+        border-radius: 0;
+      }
+    }
+
+    &.fixed-top {
+      top: 0;
+    }
+
+    &.fixed-bottom {
+      bottom: 0;
+    }
+
+    // Colors
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        .banner-inner {
+          background-color: $color;
+          color: $color-invert;
+          @include icon-bg(darken($color, 25%));
+        }
+
+        // If light and dark colors are provided
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+          $color-dark: nth($pair, 4);
+
+          &.is-light {
+            .banner-inner {
+              background-color: $color-light;
+              color: $color-dark;
+              @include icon-bg($color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner-inner {
+    padding: $banner-spacing;
+    border-radius: $radius;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: $ds-box-shadow;
+  }
+
+  .banner-icon,
+  .banner-close {
+    width: $banner-icon-size;
+    height: $banner-icon-size;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radius;
+  }
+
+  .banner-content {
+    display: flex;
+    flex: 1;
+  }
+
+  .banner-icon {
+    margin-right: $banner-spacing;
+  }
+
+  .banner-close {
+    margin-left: $banner-spacing;
+    color: inherit;
+
+    cds-icon {
+      color: inherit;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: inherit;
+      background-color: rgba($white, .25);
+    }
+  }
+
+  .banner-action {
+    width: 100%;
+    order: 3;
+    margin-top: $banner-spacing;
+  }
+
+  @include from($banner-breakpoint) {
+    .banner-inner {
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .banner-content {
+      align-items: center;
+      order: 1;
+    }
+
+    .banner-action {
+      width: auto;
+      order: 2;
+      margin-top: 0;
+    }
+
+    .banner-close {
+      order: 3;
+    }
+  }
+}

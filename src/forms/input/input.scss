@@ -1,0 +1,10 @@
+@import 'node_modules/bulma-scss/form/shared';
+@import 'node_modules/bulma-scss/form/input-textarea';
+@import 'node_modules/bulma-scss/form/tools';
+
+cds-input {
+  display: block;
+  &:not(:last-child) { 
+    margin-bottom: $spacing-md;
+  }
+}

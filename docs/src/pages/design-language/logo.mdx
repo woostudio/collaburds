@@ -1,0 +1,69 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+import { NavAnchorProvider, NavAnchor } from "../../components/nav-anchor"
+import icon from "./wapple-dark.svg"
+import wordmark from "./wordmark.svg"
+import logoWhite from "./wr-logo-white.svg"
+import logoOrange from "./wr-logo-orange.svg"
+
+
+<Layout currentPath={pagePath(props.location)}>
+
+<SEO title="Collabur DS | Design Language | Logo" />
+<NavAnchorProvider>
+<div class="docs">
+
+# Logo
+
+<div class="docs-subtitle">
+    The icon and wordmark come together to form the Woolworths Rewards brand logo. This is the only and the correct way of using the Woolworths Rewards logo across the site.
+</div>
+
+<div class="columns">
+  <div class="column is-one-half">
+  <img src={icon} style="height: 100px; margin: 0; width: 5rem;" alt="Image alt" />
+  <h4>The icon</h4>
+  <p>The symbol for fresh food.</p>
+  </div>
+  <div class="column is-one-half">
+  <img src={wordmark} style="height: 100px; margin: 0;  width: 20rem;" alt="Image alt" />
+  <h4>The wordmark</h4>
+  <p>A custom-drawn typeface.</p>
+  </div>
+</div>
+
+## Usage
+<NavAnchor hash="usage" pathname={props.location.pathname}></NavAnchor>
+
+<div class="subtitle is-4">The icon and wordmark come together to form the Woolworths Rewards brand logo. This is the only and the correct way of using the Woolworths Rewards logo across all of our channels.</div>
+<img src={logoWhite} style="margin: 30px 0;  box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 25rem;" alt="Image alt" />
+<img src={logoOrange} style="margin: 30px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);  width: 25rem;" alt="Image alt" />
+
+Both the logo (<a href="../../product/?path=/docs/elements-logo--colours-rewards">cds-logo</a>) and the icon (<a href="">cds-icon</a>) can be consumed as elements from the Collabur DS.
+### Do's 🤩 👍
+<NavAnchor hash="do" pathname={props.location.pathname}></NavAnchor>
+
+<div class="subtitle is-4">The do's are fairly simple:</div>
+
+* The logo should only be placed on the Woolworths Rewards orange background.
+* If the creative requires the logo to be placed over an image, please ensure there is enough contrast to keep the logo clear, readable. It should meet AA accessibility standards.
+
+
+### Dont's 😱 👎
+<NavAnchor hash="dont" pathname={props.location.pathname}></NavAnchor>
+<div class="subtitle is-4">The WR brand is dependant on consistent application and implementation.</div>
+
+* Don’t add shadows or other effects
+* Don’t use one element without the other
+* Don’t change colours
+* Don’t place the logo over busy background
+* Don’t rearrange, scale or change the proportions of the logo
+* Don’t rotate, stretch or skew the logo
+* Don’t attempt to recreate the logo
+
+</div>
+</NavAnchorProvider>
+</Layout>

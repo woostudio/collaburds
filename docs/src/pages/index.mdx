@@ -1,0 +1,18 @@
+import { Link } from "gatsby"
+import { pagePath } from '../helpers/page-path'
+import { withPrefix } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+<Layout currentPath={pagePath(props.location)}>
+  <SEO title="Collabur DS" />
+  <div class="has-text-centered"><img src={withPrefix('/dist/collection/assets/images/landing-page-illustration.svg')}
+      style={{width: '400px', margin: 'auto', marginTop: '120px', marginBottom: '50px'}}></img></div>
+  <h1 class="is-1 title has-text-centered has-text-primary" style={{maxWidth: '700px', margin: 'auto', marginBottom: '40px'}}>Enabling
+    ever-evolving offer experiences, everywhere.</h1>
+  <h4 class="is-4 subtitle has-text-centered has-text-black has-text-weight-normal"
+    style={{maxWidth: '700px', margin: '20px auto'}}>The Collabur DS helps partners and internal teams
+    discover the many different offer experiences available for consumption within their channels and touchpoints.
+  </h4>
+
+</Layout>

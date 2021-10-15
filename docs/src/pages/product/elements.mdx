@@ -1,0 +1,221 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Product | Elements" />
+<div class="docs">
+
+  # Elements
+
+  <div class="docs-subtitle">
+    The basic UI building blocks of the Collabur DS.
+  </div>
+
+  <div class="columns p-sm-0 is-variable is-multiline is-2" style={{maxWidth: '', margin: 'auto'}}>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-square",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Box',
+        link: "../../product/?path=/docs/tokens-colour--tokens",
+        'card-description': 'A white box to contain other elements.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-hand-pointer",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Button',
+        link: "../../product/?path=/docs/tokens-typography--tokens",
+        'card-description': 'The classic button, in different colors, sizes, and states.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-align-left",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Content',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A single class to handle WYSIWYG generated content.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-align-left",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Content Block',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A single class to handle WYSIWYG generated content.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-times-circle",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Delete',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A versatile delete cross with smart handling for colour contrasting.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-shopping-basket",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Icon',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Compatible with all icon font libraries, including our own.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-copyright",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Logo',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'An element to render various logos in different colours and sizes.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-image",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Image',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A container to handle responsive images.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-video",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Video',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A container to handle responsive videos, stopping them on dismiss.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-exclamation-triangle",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Notification',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Bold notification blocks, to alert your users of something.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-spinner",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Progress bars',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Native HTML linear and circular progress bars.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-spinner",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Loader',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A Woolworths Rewards branded animated loader.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-table",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Table',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'The inevitable HTML table, with special case cells.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-tag",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Tag',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Small tag labels that can be inserted anywhere.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-heading",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Title',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Simple headings to add depth to your page.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-mobile-android",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'CTA Bar',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A simple container to fix buttons to the top or bottom of a view.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fab fa-apple",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'iOS Status bar',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Handle the background colour of the iOS status bar.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-window-restore",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Avatar',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A simple list view for a member`s activity statement.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-usd-circle",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Roundel',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'The Rewards roundel — a versatile element to define offer types.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-window-restore",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Countdown',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A simple list view for a member`s activity statement.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-window-restore",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Form group',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A simple list view for a member`s activity statement.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-window-restore",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Progress bar',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A simple list view for a member`s activity statement.'
+      }}
+    ></cds-card-grid>
+
+  </div>
+
+</div>
+
+</Layout>

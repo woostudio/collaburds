@@ -1,0 +1,42 @@
+@import 'node_modules/bulma-scss/elements/image';
+
+cds-avatar {
+  .cds-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // background
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        background-color: $color;
+        color: $color-invert;
+
+        // icon color
+        cds-icon {
+          color: $color-invert;
+          fill: $color-invert;
+        }
+      }
+    }
+
+    // sizes
+    @each $dimension in $dimensions {
+      &.is-#{$dimension}x#{$dimension} {
+        font-size: $dimension * .5px;
+
+        // icon size
+        cds-icon {
+          width: $dimension * .50px;
+          height: $dimension * .50px;
+        }
+      }
+    }
+  }
+}

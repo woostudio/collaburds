@@ -1,0 +1,202 @@
+@import 'node_modules/bulma-scss/components/navbar';
+$navbar-item-icon-wrapper-size: $size-1;
+$navbar-item-icon-wrapper-radius: $radius;
+$navbar-item-description-color: $grey;
+$navbar-dropdown-content-width: 440px;
+$navbar-dropdown-content-width-lg: 760px;
+$navbar-dropdown-border-top: 1px solid $border;
+$navbar-item-padding:$spacing-sm $spacing-md;
+
+@mixin icon-color($color) {
+  cds-icon {
+    fill: $color;
+    color: $color;
+  }
+}
+
+cds-navbar {
+  display: block;
+
+  .navbar-item,
+  .navbar-link {
+    padding: $navbar-item-padding;
+  }
+
+
+  @include from($navbar-breakpoint) {
+
+    // dropdown
+    .has-dropdown {
+      .navbar-dropdown {
+        display: block;
+        padding: $spacing-sm;
+        border: $navbar-dropdown-border-top;
+        border-radius: $navbar-dropdown-radius;
+        box-shadow: 0 4px 8px bulmaRgba($scheme-invert, 0.1);
+        max-width: 100vw;
+        visibility: hidden;
+        z-index: -100;
+
+        &.is-center {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      // sizes
+      &.size-normal {
+        .navbar-dropdown {
+          width: $navbar-dropdown-content-width;
+        }
+      }
+
+      &.size-large {
+        .navbar-dropdown {
+          width: $navbar-dropdown-content-width-lg;
+        }
+      }
+
+      &.size-fullwidth {
+        position: static;
+
+        .navbar-dropdown {
+          width: auto;
+          left: 0;
+          right: 0;
+          transform: 0;
+        }
+      }
+
+      &.is-active,
+      &.is-hoverable:focus,
+      &.is-hoverable:focus-within,
+      &.is-hoverable:hover {
+        .navbar-dropdown {
+          visibility: visible;
+          z-index: $navbar-dropdown-z;
+        }
+      }
+    }
+
+
+
+    // spaced
+    .navbar.is-spaced .size-fullwidth .navbar-dropdown,
+    .size-fullwidth .navbar-dropdown.is-boxed {
+      top: calc(100% + (-#{$navbar-padding-vertical}) + (#{$navbar-dropdown-offset}));
+    }
+  }
+
+  // dropdown item
+  .navbar-dropdown-item {
+    display: block;
+    padding: $navbar-item-padding;
+    color: $navbar-item-color;
+    line-height: 1.5;
+    border-radius: $navbar-dropdown-radius $navbar-dropdown-radius;
+    cursor: pointer;
+
+    &:focus,
+    &:focus-within,
+    &:hover,
+    &.is-active {
+      background-color: $navbar-item-hover-background-color;
+      color: $navbar-item-hover-color;
+    }
+
+    .navbar-dropdown-item-inner {
+      display: flex;
+      height: 100%;
+
+      &.align-center {
+        align-items: center;
+      }
+
+      // layout
+      &.layout-horizontal {
+        flex-direction: row;
+      }
+
+      &.layout-stack {
+        flex-direction: column;
+
+        .navbar-icon-wrapper {
+          margin-bottom: $spacing-sm;
+        }
+      }
+    }
+
+    // icon wrapper
+    .navbar-icon-wrapper {
+      margin-right: $spacing-md;
+
+      // colors with background styles
+      @each $name,
+      $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+
+        &.icon-#{$name} {
+
+          // transparent background
+          &.icon-bg-transparent {
+            @include icon-color($color);
+          }
+
+          // solid background
+          &.icon-bg-solid {
+            background-color: $color;
+            @include icon-color($color-invert);
+          }
+
+          // If light and dark colors are provided
+          @if length($pair)>=4 {
+            $color-light: nth($pair, 3);
+            $color-dark: nth($pair, 4);
+
+            // solid background
+            &.icon-bg-light {
+              background-color: $color-light;
+              @include icon-color($color-dark);
+            }
+          }
+        }
+      }
+
+      // with icon background
+      &.icon-bg-solid,
+      &.icon-bg-light {
+        width: $navbar-item-icon-wrapper-size;
+        height: $navbar-item-icon-wrapper-size;
+        border-radius: $navbar-item-icon-wrapper-radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include until($tablet) {
+          width: $navbar-item-icon-wrapper-size *.8;
+          height: $navbar-item-icon-wrapper-size *.8;
+        }
+      }
+    }
+
+    .navbar-dropdown-item-description {
+      margin-top: $spacing-xxs;
+      color: $navbar-item-description-color;
+    }
+
+    .navbar-dropdown-item-slot {
+      width: 100%;
+    }
+  }
+}
+
+body {
+  &.has-navbar-fixed-top {
+    padding-top: 4rem;
+  }
+
+  &.has-navbar-fixed-bottom {
+    padding-bottom: 4rem;
+  }
+}

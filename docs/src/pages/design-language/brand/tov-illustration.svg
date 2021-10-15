@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2499px" height="384px" viewBox="0 0 2499 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>tov-illustration</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#B9B9B9" offset="0%"></stop>
+            <stop stop-color="#F47920" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tov-illustration">
+            <g id="Tone-of-voice" transform="translate(0.000000, 244.000000)">
+                <rect id="Rectangle" fill="url(#linearGradient-1)" transform="translate(1249.687467, 70.052670) rotate(-90.000000) translate(-1249.687467, -70.052670) " x="1234.68747" y="-679.94733" width="30" height="1500"></rect>
+                <rect id="Rectangle" fill="#B9B9B9" x="0" y="0" width="500" height="140" rx="5"></rect>
+                <rect id="Rectangle" fill="#F47920" x="1999" y="0" width="500" height="140" rx="5"></rect>
+            </g>
+            <text id="+-Formal" font-family="FreshSans-Medium, Fresh Sans" font-size="65" font-weight="400" fill="#FFFFFF">
+                <tspan x="112.2" y="335">+ Formal</tspan>
+            </text>
+            <circle id="Oval" stroke="#D19E7A" stroke-width="10" fill="#FFFFFF" cx="1181.5" cy="312.5" r="45.5"></circle>
+            <circle id="Oval" stroke="#DE9159" stroke-width="10" fill="#FFFFFF" cx="1494.5" cy="312.5" r="45.5"></circle>
+            <text id="+-Informal" font-family="FreshSans-Medium, Fresh Sans" font-size="65" font-weight="400" fill="#FFFFFF">
+                <tspan x="2099.0375" y="335">+ Informal</tspan>
+            </text>
+            <path d="M1182,8.52651283e-14 C1237.22847,8.52651283e-14 1282,44.771525 1282,100 C1282,149.353284 1246.24738,190.356095 1199.22925,198.521319 L1182,232.97491 L1164.77075,198.521319 C1117.75262,190.356095 1082,149.353284 1082,100 C1082,44.771525 1126.77153,8.52651283e-14 1182,8.52651283e-14 Z" id="Combined-Shape" fill="#D19E7A"></path>
+            <path d="M1495,9.9475983e-14 C1550.22847,9.9475983e-14 1595,44.771525 1595,100 C1595,149.353284 1559.24738,190.356095 1512.22925,198.521319 L1495,232.97491 L1477.77075,198.521319 C1430.75262,190.356095 1395,149.353284 1395,100 C1395,44.771525 1439.77153,9.9475983e-14 1495,9.9475983e-14 Z" id="Combined-Shape" fill="#DE915A"></path>
+            <path d="M1807,9.9475983e-14 C1862.22847,9.9475983e-14 1907,44.771525 1907,100 C1907,149.353284 1871.24738,190.356095 1824.22925,198.521319 L1807,232.97491 L1789.77075,198.521319 C1742.75262,190.356095 1707,149.353284 1707,100 C1707,44.771525 1751.77153,9.9475983e-14 1807,9.9475983e-14 Z" id="Combined-Shape" fill="#EF7F2E"></path>
+            <circle id="Oval" stroke="#EF7F2E" stroke-width="10" fill="#FFFFFF" cx="1806.5" cy="312.5" r="45.5"></circle>
+            <text id="User" font-family="FreshSans-Medium, Fresh Sans" font-size="40" font-weight="400" fill="#FFFFFF">
+                <tspan x="1766.18" y="115">User</tspan>
+            </text>
+            <text id="Partners" font-family="FreshSans-Medium, Fresh Sans" font-size="40" font-weight="400" fill="#FFFFFF">
+                <tspan x="1418.1" y="115">Partners</tspan>
+            </text>
+            <text id="Corp" font-family="FreshSans-Medium, Fresh Sans" font-size="40" font-weight="400" fill="#FFFFFF">
+                <tspan x="1136.88" y="115">Corp</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

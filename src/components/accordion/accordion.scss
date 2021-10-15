@@ -1,0 +1,9 @@
+cds-accordion {
+  display: grid;
+  background-color: $grey-lighter;
+  border: 1px solid $grey-lighter;
+  grid-gap: 1px;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $ds-box-shadow;
+}

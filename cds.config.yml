@@ -1,0 +1,9 @@
+ds:
+  defaultUnit: rem
+  fontDir: src/assets/fonts
+  iconDir: src/assets/icons
+map:
+  targetTag: '###'
+  rootDir: src
+  ignore: []
+  passes: 2

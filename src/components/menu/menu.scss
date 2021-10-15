@@ -1,0 +1,63 @@
+@import 'node_modules/@creativebulma/bulma-collapsible/src/sass/';
+@import 'node_modules/bulma-scss/components/menu';
+
+cds-menu {
+  li {
+    position: relative;
+  }
+
+  .menu-item {
+    display: flex;
+
+    a:first-child {
+      flex-grow: 1;
+    }
+
+    a + a {
+      margin-left: 0.25rem;
+    }
+  }
+
+  a.is-active {
+    font-weight: bold;
+  }
+
+  ul[aria-expanded=false] {
+    margin: 0;
+  }
+
+  a[data-action=collapse] {
+    &:hover,
+    &:focus {
+      color: $link;
+    }
+
+    &.is-active {
+      background-color: transparent;
+      color: $link;
+
+      &:hover,
+      &:focus {
+        color: $link;
+      }
+
+      &:hover {
+        background-color: $menu-item-hover-background-color;
+      }
+    }
+
+    .collapse {
+      display: none;
+    }
+
+    &.is-active {
+      .expand {
+        display: none;
+      }
+
+      .collapse {
+        display: inline-block;
+      }
+    }
+  }
+}

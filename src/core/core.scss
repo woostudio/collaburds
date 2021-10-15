@@ -1,0 +1,39 @@
+// Bulma Mixins & Functions
+// @import 'node_modules/bulma-scss/utilities/functions';
+
+// Collabur Mixins & Functions
+@import './functions';
+@import './mixins';
+
+// Variables
+@import './variables/initial-variables';
+@import './variables/derived-variables';
+@import './variables/collabur-variables';
+
+//Bulma
+@import 'node_modules/bulma-scss/utilities/initial-variables';
+@import 'node_modules/bulma-scss/utilities/derived-variables';
+@import 'node_modules/bulma-scss/utilities/mixins';
+@import 'node_modules/bulma-scss/utilities/controls';
+@import 'node_modules/bulma-scss/utilities/animations';
+@import 'node_modules/bulma-scss/base/minireset';
+@import 'node_modules/bulma-scss/base/generic';
+
+/*
+ * THIS SHOULD BE REMOVED!
+ * Components using title, box and other Bulma element classes need to be
+ * refactored to use the Stencil elements in this DS.
+ */
+// @import 'node_modules/bulma-scss/elements/all';
+/*
+ * THIS SHOULD BE REMOVED!
+ */
+
+@import 'node_modules/bulma-scss/grid/all';
+@import 'node_modules/bulma-scss/layout/all';
+
+// Collabur Core
+@import './base';
+@import './helpers';
+@import './fonts';
+@import './animations';

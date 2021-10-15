@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+
+.label-description {
+  margin-bottom: 1rem;
+}
+
+.file-input-hidden {
+  //opacity: 0; // for assistive technology
+  display: none;
+}
+
+.file-list {
+  display: grid;
+  grid-row-gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.file-list-item {
+  background: $grey-lightest;
+  padding: $spacing-xs;
+  border-radius: $spacing-xxs;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-list-size {
+  flex: 0 0 auto;
+}
+
+.remove-files {
+  margin-top: $spacing-md;
+}
+
+.drop-zone {
+  border-radius: $spacing-sm;
+  border: 1px dotted $primary;
+  min-height: 4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $grey-lightest;
+  padding: 2rem;
+  flex-direction: column;
+
+  &:hover,
+  &.has-files {
+    background-color: $grey-lighter;
+    transition: background-color 0.5s;
+    cursor: pointer;
+  }
+}

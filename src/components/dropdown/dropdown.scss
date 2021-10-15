@@ -1,0 +1,35 @@
+@import 'node_modules/bulma-scss/components/dropdown';
+
+.dropdown {
+  &.is-center {
+    .dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.is-fullwidth {
+    .dropdown-menu {
+      transform: none;
+      max-width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    z-index: -100;
+  }
+
+  //active
+  &.is-active,
+  &.is-hoverable:hover {
+    .dropdown-menu {
+      display: block;
+      visibility: visible;
+      z-index: $dropdown-content-z;
+    }
+  }
+}

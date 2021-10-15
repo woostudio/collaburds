@@ -1,0 +1,9 @@
+cds-lottie-animation {
+  --width: 100%;
+  --height: 100%;
+
+  .lottie-wrapper {
+    width: var(--width);
+    height: var(--height);
+  }
+}

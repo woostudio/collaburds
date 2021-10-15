@@ -1,0 +1,61 @@
+cds-accordion-item {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+
+  .accordion-drawer {
+    background-color: $white;
+    transition: background-color 0.15s;
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-sm;
+    cursor: pointer;
+    &:hover {
+      background-color: $grey-lightest;
+    }
+
+    &.is-icon-left {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      .accordion-icon {
+        margin-right: $spacing-xs;
+      }
+    }
+
+    .accordion-title {
+      font-weight: $weight-medium;
+    }
+
+    .accordion-icon {
+      transition: 0.4s;
+    }
+
+    .svg-fill {
+      fill: $grey;
+    }
+  }
+
+  .accordion-content {
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    height: 0;
+  }
+
+  .accordion-content-padding {
+    padding: $spacing-sm;
+  }
+
+  &.is-open {
+    .accordion-drawer {
+      background: $grey-lighter;
+    }
+
+    .accordion-content {
+      height: auto;
+    }
+
+    .accordion-icon {
+      transform: scaleY(-1);
+    }
+  }
+}

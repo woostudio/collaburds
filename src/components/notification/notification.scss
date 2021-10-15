@@ -1,0 +1,260 @@
+$tabbar-bottom-notch-pad: 1rem !default;
+
+@mixin icon-color($color, $icon-color:findColorInvert($color)) {
+  .cds-notification-icon {
+    background-color: $color;
+
+    cds-icon {
+      color: $icon-color;
+    }
+  }
+}
+
+cds-notification {
+  $notification-radius: 0;
+  @import 'node_modules/bulma-scss/elements/notification';
+
+  .cds-notification {
+    .notification {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      &.rounded {
+        border-radius: $radius-xl;
+      }
+
+      .cds-notification-icon {
+        width: $size-2;
+        height: $size-2;
+        background-color: $dark;
+        border-radius: $radius;
+        margin-right: $spacing-md;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // &~.cds-notification-content,
+        // &~.delete {
+        //   margin-top: $spacing-xxs;
+        // }
+      }
+
+      .notification-heading {
+        font-size: $size-5;
+      }
+
+      .cds-notification-content {
+        flex: 1;
+      }
+
+      .notification-cta {
+        margin-top: $spacing-lg;
+        padding-left: 3.5rem;
+        width: 100%;
+      }
+
+      >.notification-delete {
+        position: absolute;
+        padding: $spacing-xs;
+        border-radius: $radius;
+        color: inherit;
+        right: $spacing-sm;
+        top: $spacing-sm;
+        background-color: transparent;
+
+        &:hover {
+          cursor: pointer;
+          background-color: rgba($white, 0.15);
+        }
+
+        &::after,
+        &::before {
+          content: none;
+        }
+
+        cds-icon svg {
+          color: inherit;
+        }
+      }
+
+      padding: $spacing-md;
+
+      p {
+        line-height: 1.25rem;
+      }
+
+      p+button:not(.delete),
+      p+a.button:not(.delete) {
+        margin-top: $block-spacing;
+      }
+
+      .cds-countdown {
+        margin-top: $spacing-md;
+      }
+
+      z-index: 1;
+
+      @include mobile {
+        border-radius: 0;
+      }
+
+      &.is-bottom {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: var(--bottom-position);
+        box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.08);
+
+        /* iPhone XR 1792x828px at 326ppi */
+        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+          bottom: calc(var(--bottom-position) + env(safe-area-inset-bottom));
+        }
+
+        /* iPhone XS 2436x1125px at 458ppi */
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+          bottom: calc(var(--bottom-position) + env(safe-area-inset-bottom));
+        }
+
+        /* iPhone XS Max 2688x1242px at 458ppi */
+        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+          bottom: calc(var(--bottom-position) + env(safe-area-inset-bottom));
+        }
+      }
+
+      &.is-top {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: var(--top-position);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+
+        /* iPhone XR 1792x828px at 326ppi */
+        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+          top: calc(var(--top-position) + env(safe-area-inset-top));
+        }
+
+        /* iPhone XS 2436x1125px at 458ppi */
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+          top: calc(var(--top-position) + env(safe-area-inset-top));
+        }
+
+        /* iPhone XS Max 2688x1242px at 458ppi */
+        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+          top: calc(var(--top-position) + env(safe-area-inset-top));
+        }
+      }
+
+      &.is-primary,
+      &.is-success,
+      &.is-info,
+      &.is-warning,
+      &.is-danger,
+      &.is-link {
+        >.notification-heading {
+          color: $grey-dark;
+        }
+
+        >p {
+          color: $grey-dark;
+        }
+      }
+
+      &.is-primary {
+        color: $grey-dark;
+        background-color: tint($primary, 60%) !important;
+        @include icon-color($primary);
+      }
+
+      &.is-success {
+        color: $grey-dark;
+        background-color: tint($success, 60%) !important;
+        @include icon-color($success);
+      }
+
+      &.is-info {
+        color: $grey-dark;
+        background-color: lighten($info, 25%) !important;
+        @include icon-color($info);
+      }
+
+      &.is-warning {
+        color: $grey-dark;
+        background-color: $warning !important;
+        @include icon-color(darken($warning, 20%));
+      }
+
+      &.is-danger {
+        color: $grey-dark;
+        background-color: tint($red, 60%) !important;
+        @include icon-color($red);
+      }
+
+      // &.is-link {
+      //   color: $link;
+      //   background-color: tint($link, 60%) !important;
+      //   @include icon-color($link);
+      // }
+
+      &.is-neutral {
+        color: $grey-dark;
+        background-color: tint($grey, 70%) !important;
+        @include icon-color($grey);
+      }
+
+      &.align-left {
+        text-align: left;
+      }
+
+      &.align-center {
+        text-align: center;
+      }
+
+      &.align-right {
+        text-align: right;
+      }
+
+      @media (min-width: 768px) {
+        box-shadow: none;
+
+        &.is-top,
+        &.is-bottom {
+          box-shadow: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        border-radius: 0 !important;
+
+        .notification-cta {
+          padding-left: 0;
+
+          .button {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &[is-dismissable] {
+    .cds-notification {
+      .notification {
+        &.align-right {
+          padding: $spacing-md 3.25rem $spacing-md $spacing-md;
+        }
+      }
+    }
+  }
+
+  &[is-toast] {
+    pointer-events: initial;
+  }
+
+  +cds-notification {
+    .notification {
+      margin-top: 0.5rem;
+    }
+  }
+}

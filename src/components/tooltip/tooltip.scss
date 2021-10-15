@@ -1,0 +1,103 @@
+// TOOLTIP
+$ds-tooltip-font-size: $size-5;
+$ds-tooltip-bg: $white;
+$ds-tooltip-color: findColorInvert($white);
+$ds-tooltip-border: 1px solid $grey-lighter;
+$ds-tooltip-padding: $spacing-xs $spacing-md;
+$ds-tooltip-arrow-width: 8px;
+$ds-tooltip-z: 1000;
+$ds-tooltip-shadow: $ds-box-shadow;
+
+cds-tooltip {
+  .tooltip-inner {
+    display: none;
+    color: $ds-tooltip-color;
+    font-size: $ds-tooltip-font-size;
+    border-radius: $radius;
+    z-index: $ds-tooltip-z;
+    box-shadow: $ds-tooltip-shadow;
+    border: $ds-tooltip-border;
+    background-color: $ds-tooltip-bg;
+
+    &[data-popper-placement^='top'] {
+      &>.tooltip-arrow {
+        left: -$ds-tooltip-arrow-width/2 !important;
+        bottom: $ds-tooltip-arrow-width/2;
+      }
+    }
+
+    &[data-popper-placement^='bottom'] {
+
+      &>.tooltip-arrow {
+        left: -$ds-tooltip-arrow-width/2 !important;
+        top: -$ds-tooltip-arrow-width/2;
+      }
+    }
+
+    &[data-popper-placement^='left'] {
+
+      &>.tooltip-arrow {
+        top: -$ds-tooltip-arrow-width/2 !important;
+        right: $ds-tooltip-arrow-width/2;
+      }
+    }
+
+    &[data-popper-placement^='right'] {
+
+      &>.tooltip-arrow {
+        top: -$ds-tooltip-arrow-width/2 !important;
+        left: -$ds-tooltip-arrow-width/2;
+      }
+    }
+
+    &[data-show] {
+      display: block;
+    }
+
+
+    .tooltip-content {
+      position: relative;
+      padding: $ds-tooltip-padding;
+      background-color: inherit;
+      border-radius: $radius;
+      z-index: 1;
+    }
+
+    // variants
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        border: none;
+        background-color: $color;
+        color: $color-invert;
+
+        .tooltip-arrow {
+          &::before {
+            content: '';
+            background-color: $color;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  .tooltip-arrow {
+    z-index: -1;
+
+    &::before {
+      content: '';
+      transform: rotate(45deg);
+      background: $ds-tooltip-bg;
+      position: absolute;
+      width: $ds-tooltip-arrow-width;
+      height: $ds-tooltip-arrow-width;
+      z-index: -1;
+      box-shadow: $ds-tooltip-shadow;
+      border: $ds-tooltip-border;
+    }
+  }
+}

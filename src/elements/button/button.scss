@@ -1,0 +1,209 @@
+// $button-color: $text-strong;
+// $button-background-color: $scheme-main;
+// $button-family:	false;
+// $button-border-color: $border;
+// $button-border-width: $control-border-width;
+// $button-padding-vertical: calc(0.5em - #{$button-border-width});
+// $button-padding-horizontal: 1em;
+// $button-hover-color: $link-hover;
+// $button-hover-border-color: $link-hover-border;
+// $button-focus-color: $link-focus;
+// $button-focus-border-color: $link-focus-border;
+// $button-focus-box-shadow-size: 0 0 0 0.125e;
+// $button-focus-box-shadow-color: rgba($link, 0.25);
+// $button-active-color: $link-active;
+// $button-active-border-color: $link-active-border;
+// $button-text-color: $text;
+// $button-text-hover-background-color: $background;
+// $button-text-hover-color: $text-strong;
+// $button-disabled-background-color: $scheme-main;
+// $button-disabled-border-color: $border;
+// $button-disabled-shadow:	none;
+// $button-disabled-opacity:	0.5;
+// $button-static-color: $text-light;
+// $button-static-background-color: $scheme-main-ter;
+// $button-static-border-color: $border;
+@import 'node_modules/bulma-scss/elements/button';
+
+
+cds-button {
+  .button {
+    .icon {
+      &,
+      &.is-small,
+      &.is-medium,
+      &.is-large {
+        height: 1.25rem; // use rem
+        width: 1.25rem; // use rem
+      }
+    }
+
+    // icon size
+    &.is-small {
+      cds-icon {
+        height: $size-normal *.95;
+        width: $size-normal *.95;
+      }
+    }
+
+    &.is-medium {
+      cds-icon {
+        height: $size-normal * 1.75;
+        width: $size-normal * 1.75;
+      }
+    }
+
+    &.is-large {
+      cds-icon {
+        height: $size-normal * 2.5;
+        width: $size-normal * 2.5;
+      }
+    }
+
+    // icon color
+    // Colors
+    &.is-loading {
+      cds-icon {
+        fill: transparent !important;
+      }
+    }
+
+    &.is-text {
+      cds-icon {
+        fill: $button-text-color;
+      }
+
+      &:hover,
+      &.is-hovered,
+      &:focus,
+      &.is-focused {
+        cds-icon {
+          fill: $button-text-hover-color;
+        }
+      }
+
+      &:active,
+      &.is-active {
+        cds-icon {
+          fill: $button-text-hover-color;
+        }
+      }
+    }
+
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        cds-icon {
+          fill: $color-invert;
+        }
+
+        &:hover,
+        &.is-hovered {
+          cds-icon {
+            fill: $color-invert;
+          }
+        }
+
+        &:focus,
+        &.is-focused {
+          cds-icon {
+            fill: $color-invert;
+          }
+        }
+
+        &:active,
+        &.is-active {
+          cds-icon {
+            fill: $color-invert;
+          }
+        }
+
+        &.is-inverted {
+          cds-icon {
+            fill: $color;
+          }
+
+          &[disabled],
+          fieldset[disabled] & {
+            cds-icon {
+              fill: $color;
+            }
+          }
+        }
+
+        &.is-outlined {
+          cds-icon {
+            fill: $color;
+          }
+
+          &:hover,
+          &.is-hovered,
+          &:focus,
+          &.is-focused {
+            cds-icon {
+              fill: $color-invert;
+            }
+          }
+
+          &[disabled],
+          fieldset[disabled] & {
+            cds-icon {
+              fill: $color;
+            }
+          }
+        }
+
+        &.is-inverted.is-outlined {
+          cds-icon {
+            fill: $color-invert;
+          }
+
+          &:hover,
+          &.is-hovered,
+          &:focus,
+          &.is-focused {
+            cds-icon {
+              fill: $color;
+            }
+          }
+
+          &[disabled],
+          fieldset[disabled] & {
+            cds-icon {
+              fill: $color-invert;
+            }
+          }
+        }
+
+        // If light and dark colors are provided
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+          $color-dark: nth($pair, 4);
+
+          &.is-light {
+            cds-icon {
+              fill: $color-dark;
+            }
+
+            &:hover,
+            &.is-hovered {
+              cds-icon {
+                fill: $color-dark;
+              }
+            }
+
+            &:active,
+            &.is-active {
+              cds-icon {
+                fill: $color-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

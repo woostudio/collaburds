@@ -1,0 +1,12 @@
+cds-list-block {
+
+  --grid-gap: 0;
+
+  display: grid;
+  background-color: $grey-lighter;
+  border: 1px solid $grey-lighter;
+  grid-gap: var(--grid-gap);
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $ds-box-shadow;
+}

@@ -1,0 +1,45 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+import illustration from "./benefits-illustration.png"
+
+
+
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Introduction | Benefits" />
+<div class="docs">
+
+  # Benefits
+
+  <div class="docs-subtitle">
+    The Collabur DS is designed to deliver a number of benefits, both to the business, and for designers, developers, and partners.
+  </div>
+
+  <img src={illustration} style="margin: 30px 0 50px; max-width: 94%" alt="Image alt" />
+
+  #### 1. Increased velocity and time to market
+
+  Having highly structured, organised components, UI kits and pattern libraries reduce the time spent on technical tasks. Combined with the agile process, you can do rapid prototyping, have faster releases without losing quality and doing quick iterations.
+
+  #### 2. Better product value and user experience
+
+  Reusable components, consistent design across all the platforms, marketing that match the product. All that result in a very consistent look and feel. Interaction with the product becomes intuitive due to the usage of same patterns across the product. There is less friction adaptation for new users. Brand awareness is rising. Overall user experience becomes much better. And so does the product value grows.
+
+  #### 3. Less time and money spent
+
+  As velocity grows, teams spend less time on creating new or developing what’s already done in the form of reusable solutions. Designers and developers don’t waste time on repetitive work, meetings or questions. They focus their time on delivering results faster and bringing more value.
+
+  #### 4. Clean design, clean code
+
+  Time invested in creating and maintaining the system pays off in a form of a clean code base and easy to manage design assets. The design system is not set in stone. It will have changes as the product scales. Maintaining and updating it should not be so intimidating. Structure of the system should allow your team to make changes to the product without negative impact.
+
+  #### 5. Increased collaboration and knowledge sharing
+
+  With all teams having access to the system, it is much easier to have everyone on the same page so they can collaborate and share knowledge quickly. Another benefit is that new team members will have a much easier onboarding process.
+
+</div>
+
+</Layout>

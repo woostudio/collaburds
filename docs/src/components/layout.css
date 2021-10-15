@@ -1,0 +1,115 @@
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.main .is-block {
+}
+
+.docs {
+  padding: 40px 50px;
+  max-width: 1200px;
+}
+
+.docs h1 {
+  font-size: 4rem;
+  margin: 0px 0 20px;
+}
+
+@media (max-width: 400px) {
+  .docs h1 {
+    font-size: 2.8rem;
+  }
+}
+
+.docs h2 {
+  margin: 25px 0 10px;
+}
+
+
+.docs h3 {
+  margin: 25px 0 10px;
+}
+
+.docs h4 {
+  margin: 25px 0 10px;
+}
+
+.docs > p {
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}
+
+.docs ul {
+  list-style: circle;
+  margin-left: 20px;
+  font-size: 1.1rem;
+}
+
+.docs ol {
+  margin-left: 20px;
+  font-size: 1.1rem;
+}
+
+li {
+  padding-bottom: 15px;
+}
+
+.docs .docs-subtitle {
+  font-size: 2rem;
+  margin: 10px 0 40px;
+  font-weight: 300;
+  line-height: 2.6rem;
+}
+
+.docs .menu {
+  min-width: 240px;
+  margin-right: 30px;
+}
+
+.docs .menu .menu-list a.is-active {
+  background-color: #f57a00;
+}
+
+main {
+  width: 100%;
+  padding: 80px 40px;
+  background: #f8f8f8;
+  min-height: 100%;
+}
+
+.storybook-iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.nav-anchor {
+  position: relative;
+  height: 1px;
+  width: 1px;
+}
+
+.nav-anchor div {
+  position: absolute;
+  height: 10vh;
+  width: 10px;
+  top: 5px;
+  background: red;
+  z-index: 0;
+}
+
+.nav-anchor:first-child div {
+  bottom: auto;
+  top: 0;
+}

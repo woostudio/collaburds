@@ -1,0 +1,45 @@
+@import 'node_modules/bulma-scss/components/card';
+
+cds-card-grid {
+  .card {
+    border-radius: 3px;
+    border: none !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+      transition: 0.2s;
+    }
+    &-content {
+      .content {
+        .title {
+          display: flex;
+          margin-bottom: 10px;
+          font-size: $size-medium;
+          color: tint($grey, 30%);
+          align-items: center;
+
+          img {
+            max-width: 30px;
+            max-height: 30px;
+          }
+
+          i,
+          icon {
+            font-size: $size-large;
+            color: $primary;
+          }
+        }
+        .description {
+          color: tint($grey, 10%);
+          font-size: $size-medium;
+          line-height: $size-large;
+          font-weight: 300;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

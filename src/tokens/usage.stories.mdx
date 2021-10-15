@@ -1,36 +1,26 @@
-# Collabur Design System Boilerplate
+<Meta title="Tokens|Usage"></Meta>
 
-## Installing Collabur DS packages in your app
+# Get started
 
-You can use various Collabur properties and components as packages via NPM, within your Angular, Vue, React, or Static apps!
+Collabur Design System Design System is a reusable component library that helps contributors build UIs faster. The goal is to make building durable UIs more productive and satisfying.
 
-### Install NPM Packages into your app's repo
+## **Install**
 
-```bash
-npm install @mothershipvc/collabur-ds-boilerplate
-```
-
-
-## Using Collabur DS packages in your app
-
-Once you've installed the relevant Collabur node packages into your repo, simply do one of the following (depending on what kind of app you're building):
-
-### Add the component(s) to the dependencies
-
-Add the component to the app dependencies in package.json:
+Using yarn:
 
 ```bash
-// package.json
-
-"dependencies": {
-  ...
-  "@collabur-ds/core": "^0.3.2",
-  "@collabur-ds/forms": "^0.3.2",
-  "@collabur-ds/balance": "^0.3.2"
-}
+yarn add @collabur/cds
 ```
 
-### Integration with Frameworks
+Using npm:
+
+```bash
+npm i @collabur/cds
+```
+
+Collabur Design System components are written in Stencil.
+
+### **Use**
 
 #### Angular
 
@@ -91,7 +81,7 @@ defineCustomElements(window);
 If you want your custom elements to be able to work on older browser, you should add the `applyPolyfills()` that surrond the `defineCustomElements()` function.
 
 ```tsx
-import { applyPolyfills, defineCustomElements } from 'collabur-ds/dist/loader';
+import { applyPolyfills, defineCustomElements } from '@collabur/cds/dist/loader';
 ...
 applyPolyfills().then(() => {
   defineCustomElements(window)
@@ -106,7 +96,7 @@ Once included, components could be referenced in your code using `ViewChild` and
 ```tsx
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import 'collabur-ds';
+import '@collabur/cds';
 
 @Component({
   selector: 'app-home',
@@ -157,10 +147,10 @@ Create a plugin, (e.g collabur.ts):
 ```ts
 import Vue from 'vue';
 
-import { defineCustomElements } from 'collabur-ds/dist/loader/index.cjs';
+import { defineCustomElements } from '@collabur/cds/dist/loader/index.cjs';
 
 Vue.config.productionTip = false;
-Vue.config.ignoredElements = [/rds-\w*/];
+Vue.config.ignoredElements = [/cds-\w*/];
 
 // Bind the custom elements to the window object
 defineCustomElements(window);
@@ -180,7 +170,7 @@ Then, use it in any component!
 ```vue
 <template>
   <div>
-    <rds-barcode member-id="978020137962"></rds-barcode>
+    <cds-button>Click me!</cds-button>
   </div>
 </template>
 ```

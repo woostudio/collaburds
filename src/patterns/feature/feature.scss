@@ -1,0 +1,47 @@
+$feature-breakpoint: $tablet;
+
+cds-feature {
+  display: block;
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+
+    //layout
+    @include from($tablet) {
+      &.layout-stack {
+        align-items: center;
+      }
+
+      &.layout-left {
+        flex-direction: row;
+
+        &>[slot="body"] {
+          width: 64%;
+        }
+
+        &>[slot="header"] {
+          margin-right: $spacing-xxxl;
+          margin-bottom: 0;
+        }
+      }
+
+      &.layout-right {
+        flex-direction: row-reverse;
+
+        &>[slot="body"] {
+          width: 64%;
+        }
+
+        &>[slot="header"] {
+          margin-left: $spacing-xxxl;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &>[slot="header"] {
+      margin-bottom: $spacing-xxl;
+    }
+  }
+}

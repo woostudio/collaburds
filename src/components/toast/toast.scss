@@ -1,0 +1,46 @@
+cds-toast {
+  .cds-toast-container {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    flex-direction: column;
+    padding: 1rem;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      max-width: 75%;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 50%;
+    }
+
+    &.t, 
+    &.tl, 
+    &.tr {
+      bottom: auto;
+      top: 0;
+    }
+
+    &.b,
+    &.t {
+      align-items: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.bl,
+    &.tl {
+      align-items: flex-start;
+      left: 0;
+    }
+
+    &.br,
+    &.tr {
+      align-items: flex-end;
+      right: 0;
+    }
+  }
+}

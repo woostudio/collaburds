@@ -1,0 +1,110 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Product | Design Tokens" />
+<div class="docs">
+
+  # Design Tokens
+
+  <div class="docs-subtitle">
+    The Collabur DS is based on consistent palettes of colour, typography, layout or spacing units, and other discrete elements of style we call design tokens.
+  </div>
+
+  ## Introducing Design Tokens
+  <div style="columns: 2 200px; margin:20px 0 30px;">
+  <p>Anything we see on a website or web app is built from elements of style: elements like colour, spacing, typography, line height, elevation (use of shadows) and more. The CSS rules associated with these elements can accept a broad continuum of values — in the case of colour, there are over 16 million separate colors in the RGB color space. Font size, line height, spacing, and others can accept a similarly wide range of values.</p>
+  <p>This degree of choice can slow down design work and make communication between designer and developer unnecessarily granular. The Collabur DS seeks to maximise design efficiency and improve communication with design tokens: the discrete palettes of values from which we base all our visual design.</p>
+  <p class="pb-4">Design tokens are a limited set of discrete options, just like a scale of musical notes is drawn from the spectrum of all possible frequencies. Or like the presets on a car radio — not every option, just a specific selection.</p>
+  </div>
+
+  <div class="columns p-sm-0 is-variable is-multiline is-2" style={{maxWidth: '', margin: 'auto'}}>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-paint-brush",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Colour',
+        link: "../../product/?path=/docs/tokens-colour--tokens",
+        'card-description': 'Color conveys personality, sets a tone, attracts attention, and indicates importance.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-font-case",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Typography',
+        link: "../../product/?path=/docs/tokens-typography--tokens",
+        'card-description': 'Typography means understanding the relationship between font family, font size, and line height.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-border-all",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Layout',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Layout carefully places individual parts in relationship to the whole and holds them firmly in space.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-ruler-horizontal",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Spacing',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A standard set of sizes to handle spacing within elements, components, and views.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-layer-group",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Depth',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'A consistent set of shadow depths to focus the user on relevant call to actions (CTAs) and content.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-compress-arrows-alt",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Animation',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'An expansive set of UI transitions and interaction animations, used to delight and create focus.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-horizontal-rule",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Borders',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Global handling of border weights, colours, and radius, to ensure a consistent look and feel.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-icons",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Iconography',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'Our icons to convey core concepts and convey UI constructs in a clean and recognisable manner.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-credit-card-blank",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Empty States',
+        link: "../../product/?path=/docs/tokens-spacing--tokens",
+        'card-description': 'How we leverage empty states as opportunities to onboard and educate our members.'
+      }}
+    ></cds-card-grid>
+  </div>
+
+</div>
+
+</Layout>

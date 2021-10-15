@@ -1,0 +1,43 @@
+cds-stats-item {
+  .stats-item-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats-item {
+    &.reversed {
+      .stats-item-inner {
+        flex-direction: column-reverse;
+      }
+      .stats-item-metric {
+        margin-top: $spacing-xs;
+        margin-bottom: 0;
+      }
+    }
+
+    // align
+    &.align-center {
+      .stats-item-inner {
+        align-items: center;
+      }
+    }
+
+    &.align-left {
+      .stats-item-inner {
+        align-items: flex-start;
+      }
+    }
+
+    &.align-right {
+      .stats-item-inner {
+        align-items: flex-end;
+      }
+    }
+  }
+  .stats-item-value {
+    font-weight: $weight-bold;
+  }
+  .stats-item-metric {
+    margin-bottom: $spacing-xs;
+  }
+}

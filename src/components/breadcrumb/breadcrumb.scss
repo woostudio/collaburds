@@ -1,0 +1,17 @@
+@import 'node_modules/bulma-scss/components/breadcrumb';
+
+cds-breadcrumb {
+  cds-icon {
+    &:first-child {
+      .icon {
+        margin-right: 0.5em;
+      }
+    }
+
+    &:last-child {
+      .icon {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}

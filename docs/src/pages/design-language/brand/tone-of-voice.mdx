@@ -1,0 +1,35 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../../helpers/page-path'
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import StorybookIframe from '../../../components/storybook-iframe'
+import illustration from "./tov-illustration.svg"
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Design Language | Brand | Tone of voice" />
+<div class="docs">
+
+  # Tone of voice
+
+  <div class="docs-subtitle">
+    While our tone may vary depending on the audience, channel and context, our voice should always be consistent with the Woolworths brand essence.
+  </div>
+
+  ## Attributes
+
+  #### 1. We are benefit led
+
+  What’s in it for the member, not how good we think it is.
+
+  #### 2. We are concise
+  Use of short, snappy sentences keep it energetic and easy to understand.
+
+  #### 3. We are conversational
+  We are talking to real people. How would you explain this to a friend?
+
+  ## Formal vs Informal
+  The degree of formality will varies depending on the intended target and context. Conversations with our members are generally informal in their tone, while we adopt a slightly more formal tone in our communications with partners, and even more so within our corporate communications.
+
+  <img src={illustration} style="margin: 30px 0 50px; max-width: 100%" alt="Image alt" />
+</div>
+</Layout>

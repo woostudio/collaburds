@@ -1,0 +1,94 @@
+// $hero-body-padding: 3rem 1.5rem !default;
+// $hero-body-padding-small: 1.5rem !default;
+// $hero-body-padding-medium: 9rem 1.5rem !default;
+// $hero-body-padding-large: 18rem 1.5rem !default;
+
+@import 'node_modules/bulma-scss/layout/hero';
+$overlay-levels: ('light':.15, 'normal':.35, 'medium':.5, 'strong':.75);
+
+cds-hero {
+  .hero {
+    position: relative;
+    .hero-body{
+      position: relative;
+    }
+    .media-content {
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+      text-align: left;
+    }
+
+    .media-right {
+      flex-basis: auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .hero-video-container {
+      margin-top: $spacing-xxxl;
+      border-radius: $radius-large;
+      overflow: hidden;
+    }
+
+    @include touch {
+
+      .title,
+      .subtitle {
+        text-align: center;
+      }
+
+      cds-buttons .buttons {
+        justify-content: center;
+      }
+    }
+
+    @include desktop {
+      .media {
+        display: flex;
+        align-items: center;
+      }
+      .hero-video-container {
+        width: 400px;
+        margin: 0 $spacing-xl 0 $spacing-xxxl;
+      }
+    }
+
+    .hero-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      // lighten
+      @each $name,
+      $level in $overlay-levels {
+        &.lighten-#{$name} {
+          background-color: rgba($white, $level);
+        }
+      }
+      // darken
+      @each $name,
+      $level in $overlay-levels {
+        &.darken-#{$name} {
+          background-color: rgba($dark, $level);
+        }
+      }
+    }
+
+    .title {
+      margin-bottom: $spacing-md;
+    }
+
+    .subtitle {
+      margin-bottom: $spacing-xl;
+    }
+  }
+}

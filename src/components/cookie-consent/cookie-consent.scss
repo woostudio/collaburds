@@ -1,0 +1,115 @@
+$cookie-consent-spacing: $spacing-md;
+$cookie-consent-z-index: 9999;
+$cookie-consent-width: $tablet;
+$cookie-consent-font-size: $size-normal;
+
+cds-cookie-consent {
+  .cookie-consent {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: $cookie-consent-spacing;
+    z-index: $cookie-consent-z-index;
+    border-radius: $radius;
+
+    &:not(.show) {
+      display: none;
+    }
+
+    // Colors
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        background-color: $color;
+        color: $color-invert;
+
+        // If light and dark colors are provided
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+          $color-dark: nth($pair, 4);
+
+          &.is-light {
+            background-color: $color-light;
+            color: $color-dark;
+          }
+        }
+      }
+    }
+
+    // position
+    &.position-top,
+    &[class*=position-top-] {
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0;
+    }
+
+    &.position-bottom,
+    &[class*=position-bottom-] {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0;
+    }
+
+    .cookie-consent-content {
+      margin-bottom: $spacing-lg;
+      font-size: $cookie-consent-font-size;
+    }
+
+    @include from ($tablet) {
+      max-width: $cookie-consent-width;
+      flex-direction: row;
+
+      &:not(.position-bottom):not(.position-top) {
+        border-radius: $radius;
+      }
+
+      // position
+      &.position-top {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+      }
+
+      &.position-bottom {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+      }
+
+      &.position-top-left {
+        top: $cookie-consent-spacing;
+        left: $cookie-consent-spacing;
+        right: auto;
+      }
+
+      &.position-top-right {
+        top: $cookie-consent-spacing;
+        right: $cookie-consent-spacing;
+        left: auto;
+      }
+
+      &.position-bottom-left {
+        bottom: $cookie-consent-spacing;
+        left: $cookie-consent-spacing;
+        right: auto;
+      }
+
+      &.position-bottom-right {
+        bottom: $cookie-consent-spacing;
+        right: $cookie-consent-spacing;
+        left: auto;
+      }
+
+      .cookie-consent-content {
+        margin-right: $spacing-xl;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

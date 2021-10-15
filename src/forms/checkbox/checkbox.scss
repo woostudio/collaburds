@@ -1,0 +1,74 @@
+@import 'node_modules/bulma-scss/form/shared';
+@import 'node_modules/bulma-scss/form/checkbox-radio';
+
+
+.cds-checkbox {
+  &+label {
+    position: relative;
+    padding-left: 1.75rem;
+    cursor: pointer;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 2rem;
+    line-height: 1.2;
+  }
+
+  &+label:before,
+  &+label:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    z-index: 1;
+    border: 2px solid #aeadad;
+    border-radius: 2px;
+    transition: .2s;
+  }
+
+  &:checked,
+  &:not(:checked) {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+  }
+
+  &:checked+label {
+    &:before {
+      left: 2px;
+      top: 3px;
+      width: 8px;
+      height: 15px;
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(37deg);
+      transform-origin: 100% 100%;
+    }
+  
+    &:after {
+      width: 1.15rem;
+      height: 1.15rem;
+      border: 2px solid $primary;
+      background-color: $primary;
+      z-index: 0;
+    }
+  }
+
+  &:disabled {
+
+    &+label {
+      cursor: not-allowed;
+      color: $grey-light !important;
+      
+      &:before {
+        border: none;
+        background-color: $grey-light;
+        cursor: not-allowed;
+      }
+    }
+
+  }
+}

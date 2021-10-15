@@ -1,0 +1,30 @@
+$calendar-breakpoint: $tablet;
+
+cds-calendar-input {
+  display: block;
+
+  @include until($calendar-breakpoint) {
+    .calendar-input-alt {
+      visibility: hidden;
+      position: fixed;
+      top: -100%;
+      left: -100%;
+      z-index: -9999;
+      height: 0;
+      width: 0;
+    }
+  }
+  
+  // hide original input
+  @include from($calendar-breakpoint) {
+    .calendar-input {
+      visibility: hidden;
+      position: fixed;
+      top: -100%;
+      left: -100%;
+      z-index: -9999;
+      height: 0;
+      width: 0;
+    }
+  }
+}

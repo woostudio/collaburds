@@ -1,0 +1,94 @@
+$back-to-top-z: 10000;
+$back-to-top-float-spacing: $spacing-lg;
+$back-to-top-bg-opacity: .7;
+
+.back-to-top {
+  display: none;
+  padding: $spacing-xs ($spacing-xs * 1.25);
+  border-radius: $radius;
+
+  &.show {
+    display: flex;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // colors
+  &:not(.custom-content) {
+
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+
+      &.is-#{$name} {
+        background-color: rgba($color, $back-to-top-bg-opacity);
+        color: $color-invert;
+
+        cds-icon {
+          fill: $color-invert;
+        }
+
+        &:hover {
+          background-color: $color;
+        }
+
+        // If light and dark colors are provided
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+          $color-dark: nth($pair, 4);
+
+          &.is-light {
+            background-color: rgba($color-light, $back-to-top-bg-opacity);
+            color: $color-dark;
+
+            cds-icon {
+              fill: $color-dark;
+            }
+
+            &:hover {
+              background-color: $color-light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  // float
+  &.float {
+    position: fixed;
+    z-index: $back-to-top-z;
+
+    &:hover {
+      transform: translateY(-3px);
+      transition-duration: $speed;
+      transition-property: transform;
+      transition-timing-function: $easing;
+    }
+
+    // position
+    &.top-left {
+      top: $back-to-top-float-spacing;
+      left: $back-to-top-float-spacing;
+    }
+
+    &.top-right {
+      top: $back-to-top-float-spacing;
+      right: $back-to-top-float-spacing;
+    }
+
+    &.bottom-left {
+      bottom: $back-to-top-float-spacing;
+      left: $back-to-top-float-spacing;
+    }
+
+    &.bottom-right {
+      bottom: $back-to-top-float-spacing;
+      right: $back-to-top-float-spacing;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Design Language | Brand" />
+<div class="docs">
+
+  # Brand
+
+  <div class="docs-subtitle">
+    Consistent use of brand assets and language creates easily identifiable experiences that strengthens the Woolworths Rewards brand value in the public mind, while protecting our trademarks and company values.
+  </div>
+
+  <div class="columns p-sm-0 is-variable is-multiline is-2" style={{maxWidth: '', margin: 'auto'}}>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-eye",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Personality',
+        'card-description': '  Why we exist, our values, and how they help guide the future of all our experiences.',
+        link: "./personality/"
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Design Principles',
+        'card-description': 'The guiding principles informing our approach to design to help with everyday decisions.',
+        icon: "fal fa-bolt",
+        link: "./design-principles/"
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-comments-alt",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Tone of voice',
+        link: "./tone-of-voice/",
+        'card-description': 'While our tone may vary depending on the audience, channel and context.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-book-alt",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Terminology',
+        link: "./terminology/",
+        'card-description': 'Standard terms and phrases at the core of the Rewards experience.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-signature",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Writing guidelines',
+        link: "./writing-guidelines/",
+        'card-description': 'Consistent grammar, style choices, and action-oriented language.'
+      }}
+    ></cds-card-grid>
+  </div>
+
+</div>
+
+</Layout>

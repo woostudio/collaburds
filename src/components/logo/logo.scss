@@ -1,0 +1,68 @@
+cds-logo {
+  display: flex;
+  align-items: center;
+  width: 250px;
+
+  .woolworthscaltex-logo {
+    min-width: 130px;
+    min-height: 100px;
+  }
+
+  position: relative;
+  text-align: center;
+
+  // Logo sizes
+
+  &.is-extra-small {
+    width: 100px;
+  }
+
+  &.is-small {
+    width: 150px;
+  }
+
+  &.is-normal {
+    width: 200px;
+  }
+
+  &.is-medium {
+    width: 300px;
+  }
+
+  &.is-large {
+    width: 450px;
+  }
+
+  &.is-extra-large {
+    width: 600px;
+  }
+
+  // Logo colours
+
+  &.is-primary {
+    color: $primary;
+  }
+
+  &.is-light {
+    color: $white;
+  }
+
+  &.is-dark {
+    color: $black;
+  }
+
+  // Logo position
+
+  &.is-centered {
+    float: none;
+    margin: auto;
+  }
+
+  &.is-left {
+    float: left;
+  }
+
+  &.is-right {
+    float: right;
+  }
+}

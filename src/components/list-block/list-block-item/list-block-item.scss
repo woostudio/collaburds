@@ -1,0 +1,31 @@
+cds-list-block-item {
+  display: block;
+  background-color: $white;
+  padding: $spacing-sm;
+
+  &:hover {
+    background-color: $grey-lighter;
+  }
+
+  .list-block-item-container {
+    display: grid;
+    grid-template-columns: auto 1.5rem;
+    grid-column-gap: 0.5rem;
+    justify-items: stretch;
+    align-items: center;
+    width: 100%;
+
+    &.icon-align-left {
+      grid-template-columns: 1.5rem auto;
+
+      .list-block-item-text {
+        grid-column-start: 2;
+      }
+
+      .list-block-item-icon {
+        grid-column-start: 1;
+        grid-row-start: 1;
+      }
+    }
+  }
+}

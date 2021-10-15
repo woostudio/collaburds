@@ -1,0 +1,169 @@
+$range-track-color: $grey-lighter;
+$range-track-radius: $radius;
+$range-track-size: .5rem;
+$range-bubble-border: 1px solid $border;
+$range-bubble-size: 1.5rem;
+
+cds-range {
+  .range-wrap {
+    position: relative;
+    width: 100%;
+    margin-top: $spacing-sm;
+
+    /*  Giving more room for hover  */
+    &:hover,
+    &:focus {
+      .bubble {
+        transform: translateY(-50%) scale(1.1);
+        border-color: rgba($primary, .5);
+      }
+    }
+  }
+
+  @include tablet {
+    .range-header {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .range-inner {
+    position: relative;
+
+    /* Custom Bar */
+    &::before,
+    .range-fill {
+      content: "";
+      background-color: $range-track-color;
+      width: 100%;
+      height: $range-track-size;
+      display: block;
+      position: absolute;
+      border-radius: $range-track-radius;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .range-fill {
+      background-color: $primary;
+    }
+  }
+
+  /*  Hide Original */
+  .range {
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: $range-track-size;
+      cursor: pointer;
+      background: $light;
+      border-radius: $range-track-radius;
+    }
+
+    &::-webkit-slider-thumb {
+      height: $range-bubble-size;
+      width: $range-bubble-size;
+      border-radius: 50%;
+      background: $dark;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -($range-bubble-size / 3);
+      border: 3px solid transparent;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      background: $light;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: $range-track-size;
+      cursor: pointer;
+      animate: 0.2s;
+      background: $light;
+      border-radius: $range-track-radius;
+    }
+
+    &::-moz-range-thumb {
+      height: $range-bubble-size;
+      width: $range-bubble-size;
+      border-radius: 50%;
+      background: $dark;
+      cursor: pointer;
+      border: 3px solid transparent;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      height: $range-track-size;
+      cursor: pointer;
+      animate: 0.2s;
+      background: transparent;
+      border-color: transparent;
+      border-width: $range-bubble-size 0;
+      color: transparent;
+    }
+
+    &::-ms-fill-lower {
+      background: $light;
+      border-radius: 50px;
+    }
+
+    &::-ms-fill-upper {
+      background: $light;
+      border-radius: 50px;
+    }
+
+    &::-ms-thumb {
+      height: $range-bubble-size;
+      width: $range-bubble-size;
+      border-radius: 50%;
+      background: $dark;
+      cursor: pointer;
+      border: 3px solid transparent;
+    }
+
+    &:focus::-ms-fill-lower {
+      background: $light;
+    }
+
+    &:focus::-ms-fill-upper {
+      background: $light;
+    }
+  }
+
+  .bubble {
+    background: $white;
+    border: $range-bubble-border;
+    position: absolute;
+    border-radius: 50%;
+    width: $range-bubble-size;
+    height: $range-bubble-size;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Remove pointer events on Bubble so user can click on the actual thumb beaneath it!  */
+    color: transparent;
+    display: grid;
+    place-items: center;
+    /*  Place the number on the center  */
+    font-weight: bold;
+    box-shadow: $ds-box-shadow;
+    transition-duration: $speed;
+    transition-property: transform, border-color;
+    transition-timing-function: $easing;
+  }
+
+}

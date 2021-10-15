@@ -1,0 +1,10 @@
+@import 'node_modules/bulma-scss/form/shared';
+@import 'node_modules/bulma-scss/form/tools';
+
+cds-field {
+  &:not(:last-child) {
+    .field {
+      margin-bottom: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,175 @@
+// $progress-bar-background-color: $border;
+// $progress-value-background-color: $text;
+// $progress-border-radius: $radius-rounded;
+// $progress-indeterminate-duration: 1.5s;
+$progress-bar-background-color-light: $white;
+$progress-value-background-color-light: $grey-lightest;
+
+$circular-size-normal: 3rem;
+$circular-size-small: 2rem;
+$circular-size-medium: 4rem;
+$circular-size-large: 5rem;
+
+@import 'node_modules/bulma-scss/elements/progress';
+
+cds-progress {
+
+  // progress light
+  .progress.is-light {
+    &::-webkit-progress-bar {
+      background-color: $progress-bar-background-color-light;
+    }
+
+    &::-webkit-progress-value {
+      background-color: $progress-value-background-color-light;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $progress-value-background-color-light;
+    }
+
+    &::-ms-fill {
+      background-color: $progress-value-background-color-light;
+    }
+
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+
+      &.is-#{$name} {
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+
+          &::-webkit-progress-value {
+            background-color: $color-light;
+          }
+
+          &::-moz-progress-bar {
+            background-color: $color-light;
+          }
+
+          &::-ms-fill {
+            background-color: $color-light;
+          }
+
+          &:indeterminate {
+            background-image: linear-gradient(to right, $color-light 30%, $progress-bar-background-color-light 30%);
+          }
+        }
+      }
+    }
+
+    &:indeterminate {
+      background-color: $progress-bar-background-color-light;
+      background-image: linear-gradient(to right, $progress-value-background-color-light 30%, $progress-bar-background-color-light 30%);
+
+      &::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      &::-moz-progress-bar {
+        background-color: transparent;
+      }
+    }
+  }
+
+  // circular loader
+  @mixin loader-rotate {
+    @keyframes loader-rotate {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .circular-loader {
+    width: $circular-size-normal;
+    height: $circular-size-normal;
+    color: $progress-bar-background-color;
+
+    svg {
+      width: $circular-size-normal;
+      height: $circular-size-normal;
+    }
+
+    .value {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      color: $progress-value-background-color;
+    }
+
+    &.indeterminate {
+      animation: loader-rotate $progress-indeterminate-duration linear infinite;
+      @include loader-rotate;
+    }
+
+    // Sizes
+    &.is-small {
+      width: $circular-size-small;
+      height: $circular-size-small;
+
+      svg {
+        width: $circular-size-small;
+        height: $circular-size-small;
+      }
+    }
+
+    &.is-medium {
+      width: $circular-size-medium;
+      height: $circular-size-medium;
+
+      svg {
+        width: $circular-size-medium;
+        height: $circular-size-medium;
+      }
+    }
+
+    &.is-large {
+      width: $circular-size-large;
+      height: $circular-size-large;
+
+      svg {
+        width: $circular-size-large;
+        height: $circular-size-large;
+      }
+    }
+
+    // Colors
+    @each $name,
+    $pair in $colors {
+      $color: nth($pair, 1);
+
+      &.is-#{$name} {
+        .value {
+          color: $color;
+        }
+
+        // If light and dark colors are provided
+        @if length($pair)>=4 {
+          $color-light: nth($pair, 3);
+
+          &.is-light {
+
+            .value {
+              color: $color-light;
+            }
+          }
+        }
+      }
+    }
+
+    &.is-light {
+      .value {
+        color: $progress-bar-background-color-light;
+      }
+
+      .background {
+        color: $progress-bar-background-color-light;
+      }
+    }
+  }
+}

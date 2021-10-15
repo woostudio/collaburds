@@ -1,0 +1,58 @@
+import { Link } from "gatsby"
+import { pagePath } from '../../helpers/page-path'
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import StorybookIframe from '../../components/storybook-iframe'
+
+<Layout currentPath={pagePath(props.location)}>
+<SEO title="Collabur DS | Design Language | Guidelines" />
+<div class="docs">
+
+  # Guidelines
+
+  <div class="docs-subtitle">
+    Guidance on how to approach common issues, to establish a consistent approach and user experience on any platform.
+  </div>
+
+  <div class="columns p-sm-0 is-variable is-multiline is-2" style={{maxWidth: '', margin: 'auto'}}>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-low-vision",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Accessibility',
+        'card-description': 'How you leverage colour, hierarchy and assistive technologies to help our users.',
+        link: "./accessibility/"
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Onboarding users',
+        'card-description': 'How we onboard users onto features to give them a great experience from the start.',
+        icon: "fal fa-user-plus",
+        link: "./onboarding-users/"
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-align-left",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Notifications and permissions',
+        link: "./notifications-and-permissions/",
+        'card-description': 'Overarching guardrails for how to write copy within components.'
+      }}
+    ></cds-card-grid>
+    <cds-card-grid
+      {...{
+        icon: "fal fa-align-left",
+        class: "column is-one-third-fullhd is-half-tablet is-one-third-desktop is-full-mobile",
+        'card-title': 'Microcopy guidelines',
+        link: "./microcopy/",
+        'card-description': 'Platform conventions and best practices for writing microcopy.'
+      }}
+    ></cds-card-grid>
+  </div>
+
+</div>
+
+</Layout>

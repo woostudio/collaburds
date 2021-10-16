@@ -9,7 +9,7 @@
  *  Any Bulma overrides should be added below the commented out line
  */
 
-$primary: #ff470f !default;
+$primary: #FF470F !default;
 $secondary: #131313 !default;
 
 $info: $cyan !default;
@@ -97,76 +97,12 @@ $size-medium: $size-5 !default;
 $size-large: $size-4 !default;
 
 // Lists and maps
-$custom-colors: (
-  'secondary': (
-    $secondary,
-    $secondary-invert,
-    $secondary-light,
-    $secondary-dark,
-  ),
+$custom-colors: ('secondary': ($secondary, $secondary-invert, $secondary-light, $secondary-dark),
 ) !default;
 $custom-shades: null !default;
 
-$colors: mergeColorMaps(
-  (
-    'white': (
-      $white,
-      $black,
-    ),
-    'black': (
-      $black,
-      $white,
-    ),
-    'light': (
-      $light,
-      $light-invert,
-    ),
-    'dark': (
-      $dark,
-      $dark-invert,
-    ),
-    'primary': (
-      $primary,
-      $primary-invert,
-      $primary-light,
-      $primary-dark,
-    ),
-    'link': (
-      $link,
-      $link-invert,
-      $link-light,
-      $link-dark,
-    ),
-    'info': (
-      $info,
-      $info-invert,
-      $info-light,
-      $info-dark,
-    ),
-    'success': (
-      $success,
-      $success-invert,
-      $success-light,
-      $success-dark,
-    ),
-    'warning': (
-      $warning,
-      $warning-invert,
-      $warning-light,
-      $warning-dark,
-    ),
-    'danger': (
-      $danger,
-      $danger-invert,
-      $danger-light,
-      $danger-dark,
-    ),
-  ),
-  $custom-colors
-) !default;
-$shades: mergeColorMaps(
-  (
-    'black-bis': $black-bis,
+$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert, $primary-light, $primary-dark), "link": ($link, $link-invert, $link-light, $link-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors) !default;
+$shades: mergeColorMaps(('black-bis': $black-bis,
     'black-ter': $black-ter,
     'grey-darker': $grey-darker,
     'grey-dark': $grey-dark,
@@ -176,15 +112,13 @@ $shades: mergeColorMaps(
     'white-ter': $white-ter,
     'white-bis': $white-bis,
   ),
-  $custom-shades
-) !default;
+  $custom-shades) !default;
 
 // Type Sizes
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 $size-8 $size-9 $size-10 !default;
 
 // Spacing Scale
-$spacing-scales: (
-  xxxs: $spacing-xxxs,
+$spacing-scales: (xxxs: $spacing-xxxs,
   xxs: $spacing-xxs,
   xs: $spacing-xs,
   sm: $spacing-sm,
@@ -197,8 +131,7 @@ $spacing-scales: (
 ) !default;
 
 // Layout Scale
-$layout-scales: (
-  xxs: $layout-xxs,
+$layout-scales: (xxs: $layout-xxs,
   xs: $layout-xs,
   sm: $layout-sm,
   md: $layout-md,

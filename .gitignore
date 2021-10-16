@@ -30,3 +30,4 @@ src/assets/icons/
 .storybook/preview-head.html
 
 .cds
+package-lock.json

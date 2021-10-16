@@ -16,7 +16,7 @@
   "scripts": {
     "build": "concurrently \"rimraf dist/\" \"npm run pre-build\" \"node --max_old_space_size=4096 ./node_modules/@stencil/core/bin/stencil build --docs\"",
     "build:ds": "npm run build && npm run pre-build:storybook && npm run build:storybook",
-    "build:storybook": "rimraf storybook/ && yarn pre-build:storybook && build-storybook -c .storybook -o storybook/ && cp -R www/assets storybook/assets",
+    "build:storybook": "rimraf storybook/ && npm run pre-build:storybook && build-storybook -c .storybook -o storybook/ && cp -R www/assets storybook/assets",
     "build:npm": "npm i && npm run test && cross-env BUILD_TARGET=\"npm\" npm run build",
     "build:www": "npm i && rimraf www && cross-env BUILD_TARGET=\"www\" npm run build && cross-env BUILD_TARGET=\"www\" npm run build:storybook",
     "build:docs-assets": "npm run build:www && rimraf docs/static/ && make-dir docs/static && cp -R storybook docs/static/storybook && cp -R dist docs/static/dist",

@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
-    "@collabur/ds-scripts": "^0.1.8",
+    "@collabur/ds-scripts": "^0.1.9",
     "@fortawesome/fontawesome-pro": "^5.15.4",
     "@stencil/eslint-plugin": "^0.3.1",
     "@stencil/sass": "^1.5.2",

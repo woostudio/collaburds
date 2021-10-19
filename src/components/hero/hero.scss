@@ -4,12 +4,21 @@
 // $hero-body-padding-large: 18rem 1.5rem !default;
 
 @import 'node_modules/bulma-scss/layout/hero';
-$overlay-levels: ('light':.15, 'normal':.35, 'medium':.5, 'strong':.75);
+$overlay-levels: (
+  'light': 0.15,
+  'normal': 0.35,
+  'medium': 0.5,
+  'strong': 0.75,
+);
 
 cds-hero {
   .hero {
     position: relative;
-    .hero-body{
+    .hero-head,
+    .hero-foot {
+      position: relative;
+    }
+    .hero-body {
       position: relative;
     }
     .media-content {
@@ -32,7 +41,6 @@ cds-hero {
     }
 
     @include touch {
-
       .title,
       .subtitle {
         text-align: center;
@@ -68,15 +76,13 @@ cds-hero {
       height: 100%;
 
       // lighten
-      @each $name,
-      $level in $overlay-levels {
+      @each $name, $level in $overlay-levels {
         &.lighten-#{$name} {
           background-color: rgba($white, $level);
         }
       }
       // darken
-      @each $name,
-      $level in $overlay-levels {
+      @each $name, $level in $overlay-levels {
         &.darken-#{$name} {
           background-color: rgba($dark, $level);
         }

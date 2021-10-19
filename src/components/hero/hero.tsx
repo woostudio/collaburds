@@ -166,7 +166,7 @@ export class Hero implements ComponentInterface {
   renderFooter() {
     if (this.el.querySelector('[slot="footer"]')) {
       return (
-        <div class="hero-head">
+        <div class="hero-foot">
           <slot name="footer" />
         </div>
       );

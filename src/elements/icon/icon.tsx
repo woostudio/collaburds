@@ -1,4 +1,4 @@
-import { Component, Prop, h, JSX, ComponentInterface, Host } from '@stencil/core';
+import { Component, Prop, h, JSX, ComponentInterface, Host, getAssetPath } from '@stencil/core';
 import SVGInject from '@iconfu/svg-inject';
 import { colorProp, iconProp } from '../../core/types';
 
@@ -11,6 +11,7 @@ import { colorProp, iconProp } from '../../core/types';
 @Component({
   tag: 'cds-icon',
   styleUrls: ['icon.scss'],
+  assetsDirs: ['assets'],
 })
 export class Icon implements ComponentInterface {
   /**
@@ -52,9 +53,9 @@ export class Icon implements ComponentInterface {
       >
         {this.icon && (
           <img
-            ref={el => (this.imgSvgEl = el as HTMLElement)}
+            ref={(el) => (this.imgSvgEl = el as HTMLElement)}
             class="cds-icon-img-svg"
-            src={iconSrc}
+            src={getAssetPath(iconSrc)}
           />
         )}
       </Host>

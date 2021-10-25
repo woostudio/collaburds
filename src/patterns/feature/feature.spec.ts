@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Feature } from './Feature';
+import { Feature } from './feature';
 
 it('Should render properly', async (): Promise<void> => {
   const page = await newSpecPage({

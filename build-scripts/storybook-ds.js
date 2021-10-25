@@ -12,22 +12,29 @@ let rdsAssets = `
 try {
   var stats = fs.statSync(filePath);
   fs.unlinkSync(filePath);
-}
-catch(err) {
+} catch (err) {
   // No file found
 }
 
 // Determine the asset path by build target
-switch(buildTarget) {
+const timestamp = Date.now();
+switch (buildTarget) {
   case 'www':
-    const timestamp = Date.now();
     rdsAssets = `
       <script type="module" src="../dist/cds/cds.esm.js?${timestamp}"></script>
       <script nomodule src="../dist/cds/cds.js?${timestamp}"></script>
       <link href="../dist/cds/cds.css?${timestamp}" rel="stylesheet" />
     `;
     break;
-  default: break;
+  case 'netlify':
+    rdsAssets = `
+        <script type="module" src="../cds/cds.esm.js?${timestamp}"></script>
+        <script nomodule src="../cds/cds.js?${timestamp}"></script>
+        <link href="../cds/cds.css?${timestamp}" rel="stylesheet" />
+        `;
+    break;
+  default:
+    break;
 }
 
 // Create a new assets-path.scss file

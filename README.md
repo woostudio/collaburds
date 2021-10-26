@@ -7,9 +7,8 @@ You can use various Collabur properties and components as packages via NPM, with
 ### Install NPM Packages into your app's repo
 
 ```bash
-npm install @mothershipvc/collabur-ds-boilerplate
+npm install [npm package name]
 ```
-
 
 ## Using Collabur DS packages in your app
 
@@ -82,7 +81,7 @@ if (environment.production) {
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 defineCustomElements(window);
 ```
 
@@ -110,9 +109,7 @@ import 'collabur-ds';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <test-components #test></test-components>
-  `,
+  template: ` <test-components #test></test-components> `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {

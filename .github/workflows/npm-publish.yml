@@ -28,19 +28,18 @@ jobs:
         env:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
       - name: Update package name and version
+      - uses: actions/checkout@v2
+      - uses: fregante/setup-git-user@v1
         run: |
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
-        env:
-          PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
-          PACKAGE_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
-      - name: Git push
-        run: |
           git add .
           git commit -m "release npm" -n
           git push --set-upstream origin $GIT_BRANCH
         env:
+          PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
+          PACKAGE_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
 
       - name: Expose ENV Variables

@@ -27,9 +27,9 @@ jobs:
           git switch -c $GIT_BRANCH
         env:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
-      - name: Update package name and version
       - uses: actions/checkout@v2
       - uses: fregante/setup-git-user@v1
+      - name: Update package name and version
         run: |
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""

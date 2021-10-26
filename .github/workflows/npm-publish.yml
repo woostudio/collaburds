@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Collabur App NPM Publish
 
 on:
   release:
@@ -39,9 +39,6 @@ jobs:
         run: |
           git commit -m "release npm" -n
           git push && git push --tags
-        env:
-          NPM_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
-          NPM_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
       - name: Install and Publish
         run: |
 

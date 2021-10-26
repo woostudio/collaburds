@@ -31,6 +31,7 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - name: Update package name and version
         run: |
+          git switch -c master
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""

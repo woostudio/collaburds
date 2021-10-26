@@ -37,7 +37,7 @@ jobs:
         run: |
           git add .
           git commit -m "release npm" -n
-          git push && git push --tags
+          git push --set-upstream origin
       - name: Install and Publish
         run: |
 

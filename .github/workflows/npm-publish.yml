@@ -31,13 +31,13 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - name: Update package name and version
         run: |
-          git switch -c master
+          git switch -c $GIT_BRANCH
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
           git add .
           git commit -m "release npm" -n
-          git push --set-upstream origin $GIT_BRANCH
+          git push
         env:
           PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
           PACKAGE_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}

@@ -14,7 +14,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "rimraf dist/ && npm run pre-build && node --max_old_space_size=4096 ./node_modules/@stencil/core/bin/stencil build --docs && npm run ",
+    "build": "rimraf dist/ && npm run pre-build && node --max_old_space_size=4096 ./node_modules/@stencil/core/bin/stencil build --docs",
     "build:ds": "npm run build && npm run pre-build:storybook && npm run build:storybook",
     "build:storybook-windows": "cross-env BUILD_TARGET=\"netlify\" npm run pre-build:storybook && cross-env BUILD_TARGET=\"netlify\" build-storybook -c .storybook -o dist/docs/",
     "build:storybook": "rimraf dist/docs/ && cross-env BUILD_TARGET=\"netlify\" npm run pre-build:storybook && cross-env BUILD_TARGET=\"netlify\" build-storybook -c .storybook -o dist/docs/ && cp -R www/assets dist/docs/assets",

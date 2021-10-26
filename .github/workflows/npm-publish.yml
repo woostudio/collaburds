@@ -31,8 +31,8 @@ jobs:
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
         env:
-          NPM_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
-          NPM_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
+          PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
+          PACKAGE_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
       - name: Git push
         run: |
           git commit -m "release npm" -n

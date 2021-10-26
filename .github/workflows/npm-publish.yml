@@ -30,7 +30,6 @@ jobs:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
       - name: Update package name and version
         run: |
-          git switch -c $GIT_BRANCH
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""

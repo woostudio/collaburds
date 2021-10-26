@@ -37,9 +37,9 @@ jobs:
         run: |
           git add .
           git commit -m "release npm" -n
-          git push --set-upstream origin
-      - name: Install and Publish
-        run: |
+          git push --set-upstream origin $GIT_BRANCH
+        env:
+          GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
 
       - name: Expose ENV Variables
         run: |

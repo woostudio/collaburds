@@ -18,6 +18,39 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Setup GIT
+        run: |
+          git switch -c $GIT_BRANCH
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+        env:
+          GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
+      - name: Update package name and version
+        run: |
+          npm install -g json
+          json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
+          json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
+          json -I -f package-lock.json -e "this.name=\"$PACKAGE_NAME\""
+          json -I -f package-lock.json -e "this.version=\"$PACKAGE_VERSION\""
+        env:
+          NPM_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
+          NPM_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
+      - name: Git push
+        run: |
+          git commit -m "release npm" -n
+          git push && git push --tags
+        env:
+          NPM_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
+          NPM_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}
+      - name: Install and Publish
+        run: |
+
+      - name: Expose ENV Variables
+        run: |
+          echo COLLABUR_DS=${{ secrets.COLLABUR_DS }} >> $GITHUB_ENV
+          echo COLLABUR_DS_BRANCH=${{ secrets.COLLABUR_DS_BRANCH }} >> $GITHUB_ENV
+          echo COLLABUR_ACCESS_TOKEN=${{ secrets.COLLABUR_ACCESS_TOKEN }} >> $GITHUB_ENV
+          echo COLLABUR_API=${{ secrets.COLLABUR_API }} >> $GITHUB_ENV
       - name: Install & Build
         run: |
           npm install --frozen-lockfile --ignore-scripts

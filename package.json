@@ -1,7 +1,7 @@
 {
-  "name": "ds-boilerplate-new",
+  "name": "ds-boilerplate",
   "version": "0.1.1",
-  "description": "Collabur Design System",
+  "description": "Design System",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",

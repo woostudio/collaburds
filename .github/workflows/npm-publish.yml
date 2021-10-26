@@ -30,8 +30,6 @@ jobs:
           npm install -g json
           json -I -f package.json -e "this.name=\"$PACKAGE_NAME\""
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
-          json -I -f package-lock.json -e "this.name=\"$PACKAGE_NAME\""
-          json -I -f package-lock.json -e "this.version=\"$PACKAGE_VERSION\""
         env:
           NPM_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
           NPM_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}

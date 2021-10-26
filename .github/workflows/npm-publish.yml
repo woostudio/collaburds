@@ -25,6 +25,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
         env:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
+          GITHUB_ACTOR: ${{ github.actor }}
       - name: Update package name and version
         run: |
           npm install -g json

@@ -35,7 +35,7 @@ jobs:
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
           git add .
           git commit -m "release npm" -n
-          git push
+          git push --set-upstream origin $GIT_BRANCH
         env:
           PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
           PACKAGE_VERSION: ${{ secrets.NPM_PACKAGE_VERSION }}

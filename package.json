@@ -1,6 +1,6 @@
 {
-  "name": "@collabur/standard-ds",
-  "version": "0.18.2",
+  "name": "@woostudio/collarbur-ds-woo",
+  "version": "1.0.0",
   "description": "Design System",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",

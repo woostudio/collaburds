@@ -22,7 +22,7 @@ jobs:
       - name: Setup GIT
         run: |
           git switch -c $GIT_BRANCH
-          git fetch
+          git pull
         env:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
       - name: Update package name and version

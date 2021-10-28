@@ -22,7 +22,6 @@ jobs:
       - name: Setup GIT
         run: |
           git switch -c $GIT_BRANCH
-          git pull
         env:
           GIT_BRANCH: ${{ secrets.COLLABUR_DS_BRANCH }}
       - name: Update package name and version
@@ -32,6 +31,7 @@ jobs:
           json -I -f package.json -e "this.version=\"$PACKAGE_VERSION\""
           git add .
           git commit -m "release npm" -n
+          git fetch
           git push --set-upstream origin $GIT_BRANCH
         env:
           PACKAGE_NAME: ${{ secrets.NPM_PACKAGE_NAME }}
